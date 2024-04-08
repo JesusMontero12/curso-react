@@ -1,16 +1,17 @@
 import React from "react";
 import "./ProductCard.css";
-import { Box } from "@mui/material";
 
-const ProductCard = (props) => {
-  const { imgUrl, product, price } = props;
+const ProductCard = ({ imgUrl, product, price }) => {
   return (
     <>
       <div className="productos" id="productos">
         <a href="#">
           <span className="sale">
             <p>sale</p>
-            <img src="./src/assets/icons/fire.png" alt="icono de fuego" />
+            <img
+              src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712493190/proyects/vector/icons/fire_lni6ih.png"
+              alt="icono de fuego"
+            />
           </span>
           <div className="cuerpo">
             <img src={imgUrl} alt=""></img>
