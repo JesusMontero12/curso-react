@@ -1,9 +1,21 @@
+import { useState } from "react";
+
 const Counter = () => {
+  const contador = useState();
+
+  const sumar = () => {
+    console.log("hola");
+  };
+
+  const restar = () => {
+    console.log("chao");
+  };
+
   return (
     <>
-      <button>+</button>
+      <button onClick={sumar}>+</button>
       <h1>0</h1>
-      <button>-</button>
+      <button onClick={restar}>-</button>
     </>
   );
 };
