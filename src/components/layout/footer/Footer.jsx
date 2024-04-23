@@ -1,8 +1,25 @@
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <>
+      <div className="footer">
+        <div className="containerFooter">
+          <p>
+            <span>Regístrate gratis</span>
+            <Link className="linkRegister">Regístrate!</Link>
+          </p>
+        </div>
+        <div className="copyright">
+          <p>
+            <span>© 2023 Copyright: </span>
+            <Link className="linkCorp">MontCorp.</Link>
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Footer
+export default Footer;

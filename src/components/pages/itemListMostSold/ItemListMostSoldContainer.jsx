@@ -1,34 +1,33 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { products } from "../../../data/productsMock.js";
-import { useParams } from "react-router-dom";
-import ItemList from "./ItemList.jsx";
+import ItemListMostSold from "./ItemListMostSold.jsx";
 
-const ItemListContainer = () => {
-  const { category } = useParams();
-
+const ItemListMostSoldContainer = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const cntVendidoLimit = 80;
     let productsFiltered = products.filter(
-      (product) =>
-        product.categoria.toLowerCase().replace(/\s/g, "") === category
+      (product) => product.cntVendido >= cntVendidoLimit
     );
 
     const getProducts = new Promise((resolve, reject) => {
       let x = true;
       if (x) {
-        resolve(category ? productsFiltered : products);
+        setTimeout(() => {
+          resolve(cntVendidoLimit ? productsFiltered : products);
+        }, 2000);
       } else {
-        reject({ status: 400, message: "no estas autorizado" });
+        reject({ status: 400, message: "algo salio mal" });
       }
     });
 
     getProducts.then((res) => setItems(res)).catch((error) => setError(error));
-  }, [category]);
+  }, []);
 
-  return <ItemList items={items} error={error} />;
+  return <ItemListMostSold items={items} error={error} />;
 };
 
-export default ItemListContainer;
+export default ItemListMostSoldContainer;

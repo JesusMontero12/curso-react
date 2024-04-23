@@ -1,11 +1,12 @@
 import React from "react";
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ imgUrl, product, price }) => {
+const ProductCard = ({ id, imgUrl, product, price }) => {
   return (
     <>
       <div className="productos" id="productos">
-        <a href="#">
+        <Link to={`/itemDetail/${id}`}>
           <span className="sale">
             <p>sale</p>
             <img
@@ -25,8 +26,10 @@ const ProductCard = ({ imgUrl, product, price }) => {
           <div className="precio">
             <p>{price}</p>
           </div>
-          <button className="btnAdd">Agregar</button>
-        </a>
+        </Link>
+        <Link to="/itemDetail" className="btnAdd">
+          Agregar
+        </Link>
       </div>
     </>
   );

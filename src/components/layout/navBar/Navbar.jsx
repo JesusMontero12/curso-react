@@ -6,7 +6,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CartWidget from "../../common/cartWidget/CartWidget";
 import FavoriteWidget from "../../common/favoriteWidget/FavoriteWidget";
 import NotificationsWidget from "../../common/notificationsWidget/NotificationsWidget";
-import MenuCategories from "../../common/menuCategories/MenuCategories";
+import { Link } from "react-router-dom";
+import MenuCategoriesContainer from "../../common/menuCategories/MenuCategoriesContainer";
 
 const Navbar = () => {
   return (
@@ -28,7 +29,7 @@ const Navbar = () => {
               className="logo"
               sx={{ display: { xs: "none", md: "flex" } }}
             >
-              <a href="./index.html">Vector</a>
+              <Link to="/">Vector</Link>
             </Typography>
             {/* ----- ICONO MENU ----- */}
             <IconButton
@@ -58,25 +59,31 @@ const Navbar = () => {
                 <NotificationsWidget />
               </IconButton>
               {/* {icono usuarios} */}
-              <IconButton>
-                <Badge badgeContent={0} color="error">
-                  <img
-                    src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712493200/proyects/vector/icons/user_j9mgtr.png"
-                    alt="icono de usuario"
-                  ></img>
-                </Badge>
-              </IconButton>
+              <Link to="/login">
+                <IconButton>
+                  <Badge badgeContent={0} color="error">
+                    <img
+                      src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712493200/proyects/vector/icons/user_j9mgtr.png"
+                      alt="icono de usuario"
+                    ></img>
+                  </Badge>
+                </IconButton>
+              </Link>
               {/* {icono carrito/bag} */}
-              <IconButton>
-                <CartWidget />
-              </IconButton>
+              <Link to="/cart">
+                <IconButton>
+                  <CartWidget />
+                </IconButton>
+              </Link>
               {/* {icono favoritos} */}
-              <IconButton>
-                <FavoriteWidget />
-              </IconButton>
+              <Link to="/favorites">
+                <IconButton>
+                  <FavoriteWidget />
+                </IconButton>
+              </Link>
             </Box>
           </Toolbar>
-          <MenuCategories />
+          <MenuCategoriesContainer />
         </AppBar>
       </Box>
     </>

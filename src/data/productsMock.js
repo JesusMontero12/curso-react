@@ -3,7 +3,7 @@ export let products = [
     id: 1,
     nombre: "Pantalón jeans Vaqueros",
     precio: 39.99,
-    categoria: "Pantalones",
+    categoria: "pantalones",
     descripcion: "Pantalones Vaqueros Slim Fit De Algodón",
     imagen: [
       "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504140/proyects/vector/products/pantalones-jeans1-1_byytjp.jpg",
@@ -30,7 +30,7 @@ export let products = [
     id: 2,
     nombre: "Sudadera gris",
     precio: 29.99,
-    categoria: "Ropa deportiva",
+    categoria: "chaquetas",
     descripcion: "Sudadera casual ideal para citas y reuniones.",
     imagen: [
       "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504394/proyects/vector/products/sudadera-gris1-1_cl7yfe.jpg",
@@ -57,7 +57,7 @@ export let products = [
     id: 3,
     nombre: "Camiseta",
     precio: 20.99,
-    categoria: "camisa",
+    categoria: "camisas",
     descripcion: "Camiseta cómoda y suave ideal para el verano.",
     imagen: [
       "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503723/proyects/vector/products/camiseta-marron1-1_vopkve.jpg",
@@ -84,7 +84,7 @@ export let products = [
     id: 4,
     nombre: "Chaqueta",
     precio: 59.99,
-    categoria: "Abrigos",
+    categoria: "chaquetas",
     descripcion: "Chaqueta elegante y abrigada para el invierno.",
     imagen: [
       "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503788/proyects/vector/products/chaqueta-elegante1-1_xg6zwh.jpg",
@@ -192,7 +192,7 @@ export let products = [
     id: 8,
     nombre: "Calcetines",
     precio: 9.99,
-    categoria: "Ropa interior",
+    categoria: "calcetines",
     descripcion: "Calcetines suaves y transpirables.",
     imagen: [
       "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503665/proyects/vector/products/calcetines1-1_ailnv8.jpg",
@@ -219,7 +219,7 @@ export let products = [
     id: 9,
     nombre: "Shorts",
     precio: 24.99,
-    categoria: "Ropa casual",
+    categoria: "shorts",
     descripcion: "Shorts ligeros y perfectos para el verano.",
     imagen: [
       "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504314/proyects/vector/products/shorts-casuales1-1_l2qx7f.jpg",
@@ -246,7 +246,7 @@ export let products = [
     id: 10,
     nombre: "Blusa",
     precio: 27.99,
-    categoria: "Ropa casual",
+    categoria: "blusas",
     descripcion: "Blusa elegante y versátil para cualquier ocasión.",
     imagen: [
       "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503539/proyects/vector/products/blusa-casual1-1_anqrbh.jpg",
@@ -381,7 +381,7 @@ export let products = [
     id: 15,
     nombre: "Jersey",
     precio: 44.99,
-    categoria: "Ropa deportiva",
+    categoria: "chaquetas",
     descripcion: "Jersey ideal para actividades deportivas en climas fríos.",
     imagen: [
       "./assets/img/img-products/jersey1-1.jpg",
@@ -435,7 +435,7 @@ export let products = [
     id: 17,
     nombre: "Chaleco",
     precio: 33.99,
-    categoria: "Ropa casual",
+    categoria: "chaquetas",
     descripcion: "Chaleco moderno y versátil para cualquier temporada.",
     imagen: [
       "./assets/img/img-products/chaleco-casual1-1.jpg",
@@ -597,7 +597,7 @@ export let products = [
     id: 23,
     nombre: "Pantalón Corto Deportivo",
     precio: 24.99,
-    categoria: "Ropa deportiva",
+    categoria: "pantalones",
     descripcion: "Pantalón corto ideal para entrenamientos intensos.",
     imagen: [
       "./assets/img/img-products/short2-1.jpg",
@@ -624,7 +624,7 @@ export let products = [
     id: 24,
     nombre: "Camisa Formal",
     precio: 32.99,
-    categoria: "Ropa formal",
+    categoria: "camisas",
     descripcion: "Camisa formal para ocasiones elegantes.",
     imagen: [
       "./assets/img/img-products/camisa-formal1-1.jpg",
@@ -651,7 +651,7 @@ export let products = [
     id: 25,
     nombre: "Chaqueta de Cuero",
     precio: 69.99,
-    categoria: "Abrigos",
+    categoria: "chaquetas",
     descripcion: "Chaqueta de cuero clásica para un estilo atemporal.",
     imagen: [
       "./assets/img/img-products/chaqueta-cuero2-1.jpg",
@@ -732,7 +732,7 @@ export let products = [
     id: 28,
     nombre: "Blazer Casual",
     precio: 39.99,
-    categoria: "Ropa casual",
+    categoria: "blazer",
     descripcion: "Blazer informal para un toque sofisticado.",
     imagen: [
       "./assets/img/img-products/blazer-casual1-1.jpg",
@@ -759,7 +759,7 @@ export let products = [
     id: 29,
     nombre: "Pantalón Deportivo",
     precio: 28.99,
-    categoria: "Ropa deportiva",
+    categoria: "pantalones",
     descripcion: "Pantalón deportivo cómodo y transpirable.",
     imagen: [
       "./assets/img/img-products/pantalon-deportivo1-1.jpg",
@@ -948,7 +948,7 @@ export let products = [
     id: 36,
     nombre: "Sweater con Capucha",
     precio: 36.99,
-    categoria: "Ropa casual",
+    categoria: "chaquetas",
     descripcion: "Sweater con capucha para un look relajado.",
     imagen: [
       "./assets/img/img-products/sweater-capucha2-1.jpg",
@@ -975,7 +975,7 @@ export let products = [
     id: 37,
     nombre: "Mocasines",
     precio: 31.99,
-    categoria: "Calzado",
+    categoria: "calzado",
     descripcion: "Mocasines elegantes y cómodos para cualquier ocasión.",
     imagen: [
       "./assets/img/img-products/mocasine1-1.jpg",
@@ -1029,7 +1029,7 @@ export let products = [
     id: 39,
     nombre: "Chaqueta Deportiva",
     precio: 48.99,
-    categoria: "Ropa deportiva",
+    categoria: "chaquetas",
     descripcion: "Chaqueta deportiva para entrenamientos intensos.",
     imagen: [
       "./assets/img/img-products/chaqueta-deportiva2-1.jpg",
@@ -1056,7 +1056,7 @@ export let products = [
     id: 40,
     nombre: "Blusa Estampada",
     precio: 22.99,
-    categoria: "Ropa casual",
+    categoria: "blusas",
     descripcion: "Blusa con estampados modernos para un look fresco.",
     imagen: [
       "./assets/img/img-products/blusa-estampada1-1.jpg",
@@ -1110,7 +1110,7 @@ export let products = [
     id: 42,
     nombre: "Pantalón Jogger",
     precio: 33.99,
-    categoria: "Ropa deportiva",
+    categoria: "pantalones",
     descripcion: "Pantalón jogger para un estilo deportivo y cómodo.",
     imagen: [
       "./assets/img/img-products/pantalon-chandal1-1.jpg",
@@ -1137,7 +1137,7 @@ export let products = [
     id: 43,
     nombre: "Abrigo Parka",
     precio: 56.99,
-    categoria: "Abrigos",
+    categoria: "chaquetas",
     descripcion: "Abrigo parka resistente al agua y viento.",
     imagen: [
       "./assets/img/img-products/chaqueta-parka3-1.jpg",
@@ -1272,7 +1272,7 @@ export let products = [
     id: 48,
     nombre: "Sudadera con Cremallera",
     precio: 34.99,
-    categoria: "Ropa deportiva",
+    categoria: "chaquetas",
     descripcion: "Sudadera con cremallera para un ajuste personalizado.",
     imagen: [
       "./assets/img/img-products/sudadera-cremallera1-1.jpg",
@@ -1353,7 +1353,7 @@ export let products = [
     id: 51,
     nombre: "Blusa Manga Larga",
     precio: 26.99,
-    categoria: "Ropa casual",
+    categoria: "blusas",
     descripcion: "Blusa de manga larga para un look versátil.",
     imagen: [
       "./assets/img/img-products/blusa-manga-larga1-1.jpeg",
@@ -1407,7 +1407,7 @@ export let products = [
     id: 53,
     nombre: "Shorts Deportivos",
     precio: 19.99,
-    categoria: "Ropa deportiva",
+    categoria: "shorts",
     descripcion: "Shorts deportivos para una total libertad de movimiento.",
     imagen: [
       "./assets/img/img-products/short-deportivo1-1.jpeg",
@@ -1434,7 +1434,7 @@ export let products = [
     id: 54,
     nombre: "Chaleco de Lana",
     precio: 28.99,
-    categoria: "Abrigos",
+    categoria: "chaquetas",
     descripcion: "Chaleco de lana para un extra abrigo en invierno.",
     imagen: [
       "./assets/img/img-products/chaleco-lana1-1.jpeg",
@@ -1596,7 +1596,7 @@ export let products = [
     id: 60,
     nombre: "Sweater Oversize",
     precio: 42.99,
-    categoria: "Ropa casual",
+    categoria: "chaquetas",
     descripcion: "Sweater oversize para un look cómodo y moderno.",
     imagen: [
       "./assets/img/img-products/sweater-oversize1-1.jpeg",
@@ -1650,7 +1650,7 @@ export let products = [
     id: 62,
     nombre: "Calcetines Deportivos",
     precio: 10.99,
-    categoria: "Ropa interior",
+    categoria: "calcetines",
     descripcion: "Calcetines deportivos para una comodidad extrema.",
     imagen: [
       "./assets/img/img-products/calcetines3-1.jpeg",
@@ -1677,7 +1677,7 @@ export let products = [
     id: 63,
     nombre: "Shorts de Playa",
     precio: 26.99,
-    categoria: "Ropa casual",
+    categoria: "shorts",
     descripcion: "Shorts de playa para disfrutar del sol y la arena.",
     imagen: [
       "./assets/img/img-products/short-playero1-1.jpeg",
@@ -1704,7 +1704,7 @@ export let products = [
     id: 64,
     nombre: "Blusa Transparente",
     precio: 18.99,
-    categoria: "Ropa casual",
+    categoria: "blusa",
     descripcion: "Blusa transparente para un look atrevido y elegante.",
     imagen: [
       "./assets/img/img-products/blusa-transparente1-1.jpeg",
@@ -1839,7 +1839,7 @@ export let products = [
     id: 69,
     nombre: "Jersey Manga Corta",
     precio: 23.99,
-    categoria: "Ropa deportiva",
+    categoria: "chaqueta",
     descripcion: "Jersey sin mangas para entrenamientos intensos.",
     imagen: [
       "./assets/img/img-products/jersey-manga-corta1-1.jpeg",
@@ -1893,7 +1893,7 @@ export let products = [
     id: 71,
     nombre: "Chaleco Acolchado",
     precio: 33.99,
-    categoria: "Abrigos",
+    categoria: "chaquetas",
     descripcion: "Chaleco acolchado para un extra abrigo.",
     imagen: [
       "./assets/img/img-products/chaleco-acolchado1-1.jpeg",
@@ -2028,7 +2028,7 @@ export let products = [
     id: 76,
     nombre: "Sweater con Estampado",
     precio: 36.99,
-    categoria: "Ropa casual",
+    categoria: "chaquetas",
     descripcion: "Sweater con estampado moderno para un look llamativo.",
     imagen: [
       "./assets/img/img-products/sweater-estampado1-1.jpeg",
@@ -2136,7 +2136,7 @@ export let products = [
     id: 80,
     nombre: "Blusa Elegante",
     precio: 32.99,
-    categoria: "Ropa casual",
+    categoria: "blusas",
     descripcion: "Blusa elegante para ocasiones especiales.",
     imagen: [
       "./assets/img/img-products/blusa-elegante1-1.jpeg",
@@ -2190,7 +2190,7 @@ export let products = [
     id: 82,
     nombre: "Sudadera con Capucha",
     precio: 34.99,
-    categoria: "Ropa deportiva",
+    categoria: "chaquetas",
     descripcion: "Sudadera cómoda con capucha para un look casual.",
     imagen: [
       "./assets/img/img-products/sudadera-capucha1-1.jpeg",
@@ -2217,7 +2217,7 @@ export let products = [
     id: 83,
     nombre: "Camiseta Estampada",
     precio: 22.99,
-    categoria: "Ropa casual",
+    categoria: "camisas",
     descripcion: "Camiseta con estampado único para un toque de personalidad.",
     imagen: [
       "./assets/img/img-products/camiseta-estampada1-1.jpeg",
@@ -2244,7 +2244,7 @@ export let products = [
     id: 84,
     nombre: "Abrigo de Lana",
     precio: 59.99,
-    categoria: "Abrigos",
+    categoria: "chaquetas",
     descripcion: "Abrigo de lana elegante para enfrentar el frío con estilo.",
     imagen: [
       "./assets/img/img-products/abrigo-lana1-1.jpeg",
@@ -2352,7 +2352,7 @@ export let products = [
     id: 88,
     nombre: "Calcetines Divertidos",
     precio: 12.99,
-    categoria: "Ropa interior",
+    categoria: "calcetines",
     descripcion: "Calcetines con diseños divertidos para alegrar tu día.",
     imagen: [
       "./assets/img/img-products/calcetines2-1.jpeg",
@@ -2379,7 +2379,7 @@ export let products = [
     id: 89,
     nombre: "Shorts de Mezclilla",
     precio: 27.99,
-    categoria: "Ropa casual",
+    categoria: "shots",
     descripcion: "Shorts de mezclilla cómodos y versátiles.",
     imagen: [
       "./assets/img/img-products/short-mezclilla1-1.jpeg",
@@ -2406,7 +2406,7 @@ export let products = [
     id: 90,
     nombre: "Blusa Floral",
     precio: 29.99,
-    categoria: "Ropa casual",
+    categoria: "blusas",
     descripcion: "Blusa con estampado floral para un look fresco.",
     imagen: [
       "./assets/img/img-products/blusa-floral1-1.jpeg",
@@ -2541,7 +2541,7 @@ export let products = [
     id: 95,
     nombre: "Jersey Ligero",
     precio: 26.99,
-    categoria: "Ropa deportiva",
+    categoria: "chaquetas",
     descripcion: "Jersey ligero para entrenamientos frescos.",
     imagen: [
       "./assets/img/img-products/jersey-ligero1-1.jpeg",
