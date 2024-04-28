@@ -8,6 +8,11 @@
   text-decoration: none;
 }
 
+.productos:hover {
+  transition: 0.5s;
+  transform: scale(1.05);
+}
+
 .sale {
   display: flex;
   justify-content: center;
@@ -21,28 +26,59 @@
     font-weight: bold;
     color: var(--color-text-3);
     position: absolute;
-    z-index: 1;
+    z-index: 2;
   }
   img {
     width: 3.125rem;
     height: 3.125rem;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
   }
 }
 
 .cuerpo {
-  width: 200px;
+  width: 100%;
   height: 400px;
+  position: relative;
+  max-width: 300px;
   overflow: hidden;
+  .btnsCambiar {
+    position: absolute;
+    width: 90%;
+    margin: 160px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    .FlechaImgizquierda {
+      font-size: 50px;
+      color: var(--color-text-1);
+    }
+    .FlechaImgizquierda:hover {
+      cursor: pointer;
+      transition: 0.1s;
+      transform: scale(1.5);
+    }
+    .FlechaImgDerecha {
+      font-size: 50px;
+      color: var(--color-text-1);
+    }
+    .FlechaImgDerecha:hover {
+      cursor: pointer;
+      transition: 0.1s;
+      transform: scale(1.5);
+    }
+  }
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 }
 .titulo {
   h3 {
+    width: 100%;
     margin: 0;
     text-align: left !important;
     font-family: arimo !important;
@@ -50,13 +86,22 @@
     font-weight: 600;
     color: var(--color-text-3);
   }
+  p {
+    margin: 5px 2px 5px 0px;
+    text-align: left;
+    font-family: arimo;
+    font-size: 16px;
+    color: var(--color-text-3);
+  }
 }
 .precio_descuento {
+  display: flex;
+  margin: 8px 0rem;
   p {
     font-family: montserrat;
     font-size: 1rem;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--color-text-3);
   }
   span {
     margin-left: 10px;
@@ -64,6 +109,7 @@
     border-radius: 0.125rem;
     font-family: arimo;
     font-size: 0.75rem;
+    font-weight: 300;
     color: var(--color-text-1);
     background-color: red;
   }

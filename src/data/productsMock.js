@@ -25,6 +25,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["mujer", null, null],
   },
   {
     id: 2,
@@ -52,6 +53,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 3,
@@ -79,6 +81,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 4,
@@ -106,6 +109,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 5,
@@ -133,6 +137,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 6,
@@ -160,6 +165,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 7,
@@ -187,6 +193,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 8,
@@ -214,6 +221,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 9,
@@ -241,6 +249,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 10,
@@ -268,6 +277,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 11,
@@ -295,6 +305,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 12,
@@ -303,9 +314,9 @@ export let products = [
     categoria: "Faldas",
     descripcion: "Falda femenina y moderna para diversas ocasiones.",
     imagen: [
-      "./assets/img/img-products/falda-casual1-1.jpeg",
-      "./assets/img/img-products/falda-casual1-2.jpeg",
-      "./assets/img/img-products/falda-casual1-3.jpeg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503834/proyects/vector/products/falda-casual1-1_gvxlej.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503838/proyects/vector/products/falda-casual1-2_w9vidk.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503842/proyects/vector/products/falda-casual1-3_wygivd.jpg",
     ],
     inicial: 100,
     stock: 74,
@@ -322,6 +333,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 13,
@@ -330,9 +342,9 @@ export let products = [
     categoria: "Accesorios",
     descripcion: "Bufanda abrigada y con estilo para el invierno.",
     imagen: [
-      "./assets/img/img-products/bufanda-casual1-1.jpg",
-      "./assets/img/img-products/bufanda-casual1-2.jpg",
-      "./assets/img/img-products/bufanda-casual1-3.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503629/proyects/vector/products/bufanda-casual1-1_kpwh87.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503633/proyects/vector/products/bufanda-casual1-2_bntwno.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503637/proyects/vector/products/bufanda-casual1-3_ahvpjh.jpg",
     ],
     inicial: 100,
     stock: 54,
@@ -349,6 +361,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 14,
@@ -357,9 +370,9 @@ export let products = [
     categoria: "Trajes de baño",
     descripcion: "Traje de baño moderno y cómodo para la playa.",
     imagen: [
-      "./assets/img/img-products/traje-de-bano1-1.jpg",
-      "./assets/img/img-products/traje-de-bano1-2.jpg",
-      "./assets/img/img-products/traje-de-bano1-3.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504445/proyects/vector/products/traje-de-bano1-1_rxoeus.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504449/proyects/vector/products/traje-de-bano1-2_v3x7bp.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504453/proyects/vector/products/traje-de-bano1-3_f1luyo.jpg",
     ],
     inicial: 100,
     stock: 7,
@@ -376,6 +389,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 15,
@@ -384,9 +398,9 @@ export let products = [
     categoria: "chaquetas",
     descripcion: "Jersey ideal para actividades deportivas en climas fríos.",
     imagen: [
-      "./assets/img/img-products/jersey1-1.jpg",
-      "./assets/img/img-products/jersey1-2.jpg",
-      "./assets/img/img-products/jersey1-3.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503972/proyects/vector/products/jersey1-1_ijybc2.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503976/proyects/vector/products/jersey1-2_sgfzhu.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503980/proyects/vector/products/jersey1-3_idgdjk.jpg",
     ],
     inicial: 100,
     stock: 36,
@@ -403,6 +417,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 16,
@@ -411,9 +426,9 @@ export let products = [
     categoria: "Accesorios",
     descripcion: "Sombrero de ala ancha para protegerse del sol con estilo.",
     imagen: [
-      "./assets/img/img-products/sombrero1-1.jpg",
-      "./assets/img/img-products/sombrero1-2.jpg",
-      "./assets/img/img-products/sombrero1-3.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504327/proyects/vector/products/sombrero1-1_ilhyge.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504331/proyects/vector/products/sombrero1-2_s5gdza.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712504335/proyects/vector/products/sombrero1-3_vrfi9u.jpg",
     ],
     inicial: 100,
     stock: 26,
@@ -430,6 +445,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 17,
@@ -438,9 +454,9 @@ export let products = [
     categoria: "chaquetas",
     descripcion: "Chaleco moderno y versátil para cualquier temporada.",
     imagen: [
-      "./assets/img/img-products/chaleco-casual1-1.jpg",
-      "./assets/img/img-products/chaleco-casual1-2.jpg",
-      "./assets/img/img-products/chaleco-casual1-3.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503745/proyects/vector/products/chaleco-casual1-1_v1aftg.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503749/proyects/vector/products/chaleco-casual1-2_omykhl.jpg",
+      "https://res.cloudinary.com/dqngvzxqy/image/upload/v1712503752/proyects/vector/products/chaleco-casual1-3_g9xfyy.jpg",
     ],
     inicial: 100,
     stock: 88,
@@ -457,6 +473,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 18,
@@ -465,9 +482,9 @@ export let products = [
     categoria: "Ropa deportiva",
     descripcion: "Pullover cómodo y transpirable para actividades deportivas.",
     imagen: [
-      "./assets/img/img-products/pullover1-1.jpg",
-      "./assets/img/img-products/pullover1-2.jpg",
-      "./assets/img/img-products/pullover1-3.jpg",
+      "",
+      "",
+      "",
     ],
     inicial: 100,
     stock: 96,
@@ -484,6 +501,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 19,
@@ -511,6 +529,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 20,
@@ -538,6 +557,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 21,
@@ -565,6 +585,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 22,
@@ -592,6 +613,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 23,
@@ -619,6 +641,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 24,
@@ -646,6 +669,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 25,
@@ -673,6 +697,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 26,
@@ -700,6 +725,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 27,
@@ -727,6 +753,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 28,
@@ -754,6 +781,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 29,
@@ -781,6 +809,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 30,
@@ -808,6 +837,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 31,
@@ -835,6 +865,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 32,
@@ -862,6 +893,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 33,
@@ -889,6 +921,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 34,
@@ -916,6 +949,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 35,
@@ -943,6 +977,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 36,
@@ -970,6 +1005,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 37,
@@ -997,6 +1033,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 38,
@@ -1024,6 +1061,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 39,
@@ -1051,6 +1089,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 40,
@@ -1078,6 +1117,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 41,
@@ -1105,6 +1145,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 42,
@@ -1132,6 +1173,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 43,
@@ -1159,6 +1201,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 44,
@@ -1186,6 +1229,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 45,
@@ -1213,6 +1257,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 46,
@@ -1240,6 +1285,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 47,
@@ -1267,6 +1313,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 48,
@@ -1294,6 +1341,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 49,
@@ -1321,6 +1369,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 50,
@@ -1348,6 +1397,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 51,
@@ -1375,6 +1425,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 52,
@@ -1402,6 +1453,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 53,
@@ -1429,6 +1481,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 54,
@@ -1456,6 +1509,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 55,
@@ -1483,6 +1537,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 56,
@@ -1510,6 +1565,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 57,
@@ -1537,6 +1593,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 58,
@@ -1564,6 +1621,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 59,
@@ -1591,6 +1649,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 60,
@@ -1618,6 +1677,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 61,
@@ -1645,6 +1705,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 62,
@@ -1672,6 +1733,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 63,
@@ -1699,6 +1761,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 64,
@@ -1726,6 +1789,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 65,
@@ -1753,6 +1817,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 66,
@@ -1780,6 +1845,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 67,
@@ -1807,6 +1873,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 68,
@@ -1834,6 +1901,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 69,
@@ -1861,6 +1929,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 70,
@@ -1888,6 +1957,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 71,
@@ -1915,6 +1985,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 72,
@@ -1942,6 +2013,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 73,
@@ -1969,6 +2041,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 74,
@@ -1996,6 +2069,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 75,
@@ -2023,6 +2097,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 76,
@@ -2050,6 +2125,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 77,
@@ -2077,6 +2153,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 78,
@@ -2104,6 +2181,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 79,
@@ -2131,6 +2209,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 80,
@@ -2158,6 +2237,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 81,
@@ -2185,6 +2265,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 82,
@@ -2212,6 +2293,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 83,
@@ -2239,6 +2321,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 84,
@@ -2266,6 +2349,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 85,
@@ -2293,6 +2377,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 86,
@@ -2320,6 +2405,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 87,
@@ -2347,6 +2433,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 88,
@@ -2374,6 +2461,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 89,
@@ -2401,6 +2489,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 90,
@@ -2428,6 +2517,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 91,
@@ -2455,6 +2545,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 92,
@@ -2482,6 +2573,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 93,
@@ -2509,6 +2601,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 94,
@@ -2536,6 +2629,7 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
   {
     id: 95,
@@ -2563,5 +2657,6 @@ export let products = [
       xxl: 2,
     },
     talla: ["s", "m", "l", "xl", "xxl"],
+    genero: ["hombre", null, null],
   },
 ];

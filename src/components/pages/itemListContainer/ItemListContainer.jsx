@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList.jsx";
 
 const ItemListContainer = () => {
-  const { category } = useParams();
+  const { category, genero } = useParams();
 
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
@@ -13,15 +13,22 @@ const ItemListContainer = () => {
   useEffect(() => {
     let productsFiltered = products.filter(
       (product) =>
-        product.categoria.toLowerCase().replace(/\s/g, "") === category
+        product.categoria.toLowerCase().replace(/\s/g, "") === category &&
+        (genero ? product.genero.includes(genero) : true)
     );
 
     const getProducts = new Promise((resolve, reject) => {
       let x = true;
       if (x) {
-        resolve(category ? productsFiltered : products);
+        if (genero) {
+          resolve(productsFiltered);
+        } else if (category) {
+          resolve(productsFiltered);
+        } else {
+          resolve(products);
+        }
       } else {
-        reject({ status: 400, message: "no estas autorizado" });
+        reject({ status: 400, message: "No estás autorizado" });
       }
     });
 

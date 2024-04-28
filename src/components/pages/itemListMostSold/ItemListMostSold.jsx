@@ -15,18 +15,23 @@ const ItemListMostSold = ({ items, error }) => {
       <Box className="list_productos">
         <h3>Lo más vendido</h3>
         <Grid container spacing={2} columns={16} className="content_producto">
-          {items.map(({ id, imagen, nombre, precio }) => {
-            return (
-              <Grid item lg={3} key={id}>
-                <ProductCard
-                  id={id}
-                  imgUrl={imagen[0]}
-                  product={nombre}
-                  price={precio}
-                />
-              </Grid>
-            );
-          })}
+          {items.map(
+            ({ id, sale, imagen, nombre, descripcion, precio, desc }) => {
+              return (
+                <Grid item lg={3} key={id}>
+                  <ProductCard
+                    id={id}
+                    sale={sale}
+                    imgUrl={imagen[0]}
+                    product={nombre}
+                    description={descripcion}
+                    price={precio}
+                    desc={desc}
+                  />
+                </Grid>
+              );
+            }
+          )}
           {error && <h2>{error.message}</h2>}
         </Grid>
       </Box>
