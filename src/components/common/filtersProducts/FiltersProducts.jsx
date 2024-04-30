@@ -15,10 +15,10 @@ const FiltersProducts = () => {
               </h3>
               <div className="content_categorias">
                 <div className="categoria">
-                  <Link to="/genero/hombre">Ropa de hombre</Link>
+                  <Link to="/filtros/genero/unisex">Ropa de hombre</Link>
                 </div>
                 <div className="categoria">
-                  <Link to="/genero/mujer">Ropa de mujer</Link>
+                  <Link to="/filtros/genero/mujer">Ropa de mujer</Link>
                 </div>
                 <div className="categoria">
                   <Link to="/genero/nino">Ropa de niños</Link>

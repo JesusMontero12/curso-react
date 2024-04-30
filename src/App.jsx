@@ -19,8 +19,7 @@ function App() {
           <Route path="/login" element={<LoginContainer />} />
           <Route path="/favorites" element={<FavoritesContainer />} />
           <Route path="/shop" element={<ItemListContainer />} />
-          <Route path="/category/:category" element={<ItemListContainer />} />
-          <Route path="/genero/:genero" element={<ItemListContainer />} />
+          <Route path="/filtros/:key/:value" element={<ItemListContainer />} />
           <Route path="/talla/:name" element={<ItemListContainer />} />
           <Route path="*" element={<NotFound />} />
         </Route>

@@ -5,24 +5,20 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList.jsx";
 
 const ItemListContainer = () => {
-  const { category, genero } = useParams();
+  const { key, value } = useParams();
 
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let productsFiltered = products.filter(
-      (product) =>
-        product.categoria.toLowerCase().replace(/\s/g, "") === category &&
-        (genero ? product.genero.includes(genero) : true)
+    let productsFiltered = products.filter((product) => 
+     product[key] === value
     );
 
     const getProducts = new Promise((resolve, reject) => {
       let x = true;
       if (x) {
-        if (genero) {
-          resolve(productsFiltered);
-        } else if (category) {
+        if (value) {
           resolve(productsFiltered);
         } else {
           resolve(products);
@@ -33,7 +29,7 @@ const ItemListContainer = () => {
     });
 
     getProducts.then((res) => setItems(res)).catch((error) => setError(error));
-  }, [category]);
+  }, [value]);
 
   return <ItemList items={items} error={error} />;
 };

@@ -6,18 +6,18 @@ const MenuCategories = () => {
   return (
     <>
       <Box sx={{ display: { xs: "none", md: "flex" } }} className="categorias">
-        <Link to="/category/camisas">Camisas</Link>
-        <Link to="/category/calzado">Zapatos</Link>
-        <Link to="/category/vestidos">Vestidos</Link>
-        <Link to="/category/shorts">Shorts</Link>
-        <Link to="/category/calcetines">Calcetines</Link>
-        <Link to="/category/accesorios">Accesorios</Link>
-        <Link to="/category/pantalones">pantalones</Link>
-        <Link to="/category/chaquetas">Chaquetas</Link>
-        <Link to="/category/ropadeportiva">Ropa Deportiva</Link>
-        <Link to="/category/blusas">Blusas</Link>
-        <Link to="/category/blazer">Blazer</Link>
-        <Link to="/category/ropadedormir">Ropa para dormir</Link>
+        <Link to="/filtros/categoria/camisas">Camisas</Link>
+        <Link to="/filtros/categoria/calzado">Zapatos</Link>
+        <Link to="/filtros/categoria/vestidos">Vestidos</Link>
+        <Link to="/filtros/categoria/shorts">Shorts</Link>
+        <Link to="/filtros/categoria/calcetines">Calcetines</Link>
+        <Link to="/filtros/categoria/accesorios">Accesorios</Link>
+        <Link to="/filtros/categoria/pantalones">pantalones</Link>
+        <Link to="/filtros/categoria/chaquetas">Chaquetas</Link>
+        <Link to="/filtros/categoria/ropadeportiva">Ropa Deportiva</Link>
+        <Link to="/filtros/categoria/blusas">Blusas</Link>
+        <Link to="/filtros/categoria/blazer">Blazer</Link>
+        <Link to="/filtros/categoria/ropadedormir">Ropa para dormir</Link>
       </Box>
     </>
   );
