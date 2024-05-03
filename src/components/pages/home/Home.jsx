@@ -15,7 +15,7 @@ const Home = ({ greeting }) => {
             </Typography>
             {/* {----- Botón Tienda -----} */}
             <ToggleButtonGroup className="btnTienda">
-              <Link to="/shop">Tienda</Link>
+              <Link to="/products">Tienda</Link>
             </ToggleButtonGroup>
           </Grid>
         </Grid>

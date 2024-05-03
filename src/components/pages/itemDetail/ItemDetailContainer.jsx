@@ -1,11 +1,13 @@
 import ItemDetail from "./ItemDetail.jsx";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { products } from "../../../data/productsMock.js";
+import { CartContex } from "../../../context/CartContext";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
+  const { addToCart } = useContext(CartContex);
 
   useEffect(() => {
     let productFound = products.find((product) => product.id === +id);
@@ -20,7 +22,12 @@ const ItemDetailContainer = () => {
     getProduct.then((res) => setItem(res));
   }, [id]);
 
-  return <ItemDetail item={item} />;
+  const onAdd = (cantidad) => {
+    let product = { ...item, cantidad: cantidad };
+    addToCart(product);
+  };
+
+  return <ItemDetail item={item} onAdd={onAdd} />;
 };
 
 export default ItemDetailContainer;

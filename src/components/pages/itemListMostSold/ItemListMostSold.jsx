@@ -22,7 +22,7 @@ const ItemListMostSold = ({ items, error }) => {
                   <ProductCard
                     id={id}
                     sale={sale}
-                    imgUrl={imagen[0]}
+                    imgUrl={imagen}
                     product={nombre}
                     description={descripcion}
                     price={precio}

@@ -3,13 +3,36 @@
   margin: 20px auto;
 }
 
-.content_producto_detalle .productos {
+.content_producto_detalle .productosDetail {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px;
+  .saleDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -280px;
+    position: relative;
+    p {
+      margin-top: 20px;
+      font-family: montserrat;
+      font-size: 0.625rem;
+      font-weight: bold;
+      color: var(--color-text-3);
+      position: absolute;
+      z-index: 2;
+    }
+    img {
+      width: 3.125rem;
+      height: 3.125rem;
+      position: absolute;
+      z-index: 1;
+    }
+  }
 }
-.productos .productoDetallado {
+.productosDetail .productoDetallado {
   display: flex;
   justify-content: center;
   width: 80%;
@@ -78,7 +101,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  .titulo {
+  .tituloDetail {
     width: 100%;
     h3 {
       text-align: left;
@@ -220,34 +243,6 @@
       font-family: arimo;
       font-size: 16px;
       color: var(--color-text-3);
-    }
-  }
-  .btnAction {
-    margin: 10px 0px;
-    display: flex;
-    .btnAdd {
-      width: 200px;
-      height: 40px;
-      padding: 10px 10px;
-      text-align: center;
-      font-family: Montserrat;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--color-text-1);
-      background-color: var(--bg-4);
-      border-style: none;
-      border-radius: 0.3125rem;
-    }
-    .btnAdd:hover {
-      cursor: pointer;
-      transition: 0.2s;
-      transform: scale(1.05);
-    }
-    img {
-      width: 24px;
-      height: 24px;
-      margin: 6px;
     }
   }
 }

@@ -2,6 +2,7 @@ import { Box, Grid } from "@mui/material";
 import "./ItemList.css";
 import ProductCard from "../../common/productCard/ProductCard.jsx";
 import FiltersProductsContainer from "../../common/filtersProducts/FiltersProductsContainer.jsx";
+import { Link } from "react-router-dom";
 
 const ItemList = ({ items, error }) => {
   return (
@@ -45,7 +46,7 @@ const ItemList = ({ items, error }) => {
                           <ProductCard
                             id={id}
                             sale={sale}
-                            imgUrl={imagen[0]}
+                            imgUrl={imagen}
                             product={nombre}
                             description={descripcion}
                             price={precio}

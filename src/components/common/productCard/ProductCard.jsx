@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,20 @@ const ProductCard = ({
   price,
   desc,
 }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleChangeImage = (direction) => {
+    setCurrentIndex((prevIndex) => {
+      let newIndex = prevIndex + direction;
+      if (newIndex < 0) {
+        newIndex = imgUrl.length - 1;
+      } else if (newIndex >= imgUrl.length) {
+        newIndex = 0;
+      }
+      return newIndex;
+    });
+  };
+
   // validamos si el producto esta en sale para crear el elemento que indique que este esta en sale
   const newSale =
     sale == true ? (
@@ -41,6 +55,7 @@ const ProductCard = ({
     ) : (
       <p>{price.toFixed(3)}</p>
     );
+
   return (
     <>
       <div className="productos" id="productos">
@@ -48,17 +63,26 @@ const ProductCard = ({
           {newSale}
           <div className="cuerpo">
             <div className="btnsCambiar">
-              <label
-                id="anterior_${producto.id}"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleChangeImage(-1);
+                }}
                 className="FlechaImgizquierda"
               >
                 &#8249;
-              </label>
-              <label id="siguiente_${producto.id}" className="FlechaImgDerecha">
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleChangeImage(-1);
+                }}
+                className="FlechaImgDerecha"
+              >
                 &#8250;
-              </label>
+              </button>
             </div>
-            <img src={imgUrl} alt=""></img>
+            <img id={`img_${id}`} src={imgUrl[currentIndex]} alt=""></img>
           </div>
           <div className="titulo">
             <h3>{newName}</h3>
@@ -69,9 +93,6 @@ const ProductCard = ({
             {newElementDesc}
           </div>
           <div className="precio">{newPrice}</div>
-        </Link>
-        <Link to="/itemDetail" className="btnAdd">
-          Agregar
         </Link>
       </div>
     </>

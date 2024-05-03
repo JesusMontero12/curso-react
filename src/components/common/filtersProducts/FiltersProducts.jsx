@@ -15,13 +15,16 @@ const FiltersProducts = () => {
               </h3>
               <div className="content_categorias">
                 <div className="categoria">
-                  <Link to="/filtros/genero/unisex">Ropa de hombre</Link>
+                  <Link to="/filtros/genero/unisex">Ropa unisex</Link>
+                </div>
+                <div className="categoria">
+                  <Link to="/filtros/genero/hombre">Ropa de hombre</Link>
                 </div>
                 <div className="categoria">
                   <Link to="/filtros/genero/mujer">Ropa de mujer</Link>
                 </div>
                 <div className="categoria">
-                  <Link to="/genero/nino">Ropa de niños</Link>
+                  <Link to="/filtros/genero/nino">Ropa de niños</Link>
                 </div>
               </div>
             </div>
@@ -31,16 +34,16 @@ const FiltersProducts = () => {
               </h3>
               <div className="content-ajustes">
                 <div className="ajuste">
-                  <Link to="/category/">Regular</Link>
+                  <Link to="/filtros/tags/">Regular</Link>
                 </div>
                 <div className="ajuste">
-                  <Link to="/category/">Oversized</Link>
+                  <Link to="/filtros/tags/">Oversized</Link>
                 </div>
                 <div className="ajuste">
-                  <Link to="/category/">Suelto</Link>
+                  <Link to="/filtros/tags/">Suelto</Link>
                 </div>
                 <div className="ajuste">
-                  <Link to="/category/">Ajustado</Link>
+                  <Link to="/filtros/tags/">Ajustado</Link>
                 </div>
               </div>
             </div>
@@ -50,19 +53,19 @@ const FiltersProducts = () => {
               </h3>
               <div className="content-estilo">
                 <div className="estilo">
-                  <Link to="/category/">Casual</Link>
+                  <Link to="/filtros/tags/">Casual</Link>
                 </div>
                 <div className="estilo">
-                  <Link to="/category/">Calle</Link>
+                  <Link to="/filtros/tags/">Calle</Link>
                 </div>
                 <div className="estilo">
-                  <Link to="/category/">Trabajo</Link>
+                  <Link to="/filtros/tags/">Trabajo</Link>
                 </div>
                 <div className="estilo">
-                  <Link to="/category/">Fiesta</Link>
+                  <Link to="/filtros/tags/">Fiesta</Link>
                 </div>
                 <div className="estilo">
-                  <Link to="/category/">Bohemio</Link>
+                  <Link to="/filtros/tags/">Bohemio</Link>
                 </div>
               </div>
             </div>
@@ -72,22 +75,22 @@ const FiltersProducts = () => {
               </h3>
               <div className="content-tallas">
                 <div className="talla">
-                  <Link to="/talla/u">U</Link>
+                  <Link to="/filtros/talla/u">U</Link>
                 </div>
                 <div className="talla">
-                  <Link to="/talla/s">S</Link>
+                  <Link to="/filtros/talla/s">S</Link>
                 </div>
                 <div className="talla">
-                  <Link to="/talla/m">M</Link>
+                  <Link to="/filtros/talla/m">M</Link>
                 </div>
                 <div className="talla">
-                  <Link to="/talla/l">L</Link>
+                  <Link to="/filtros/talla/l">L</Link>
                 </div>
                 <div className="talla">
-                  <Link to="/talla/xl">XL</Link>
+                  <Link to="/filtros/talla/xl">XL</Link>
                 </div>
                 <div className="talla">
-                  <Link to="/talla/xxl">XXL</Link>
+                  <Link to="/filtros/talla/xxl">XXL</Link>
                 </div>
               </div>
             </div>

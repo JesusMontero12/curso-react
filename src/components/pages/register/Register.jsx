@@ -1,34 +1,39 @@
-import { Link } from "react-router-dom";
-import "./Login.css";
+import "./Register.css";
 
-const Login = () => {
+const Register = () => {
   return (
     <>
-      <div className="contentLogin">
-        <div className="logoLogin">
+      <div className="contentRegister">
+        <div className="logoRegister">
           <img
             src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714695931/proyects/vector/icons/letra-v_1_xpjl6x.png"
             alt=""
           />
         </div>
-        <div className="login">
-          <h1>Login</h1>
+        <div className="register">
+          <h1>Regístrate</h1>
           <form action="">
-            <input type="email" name="user" id="user" placeholder="correo" />
+            <input
+              type="text"
+              name="user"
+              id="user"
+              placeholder="Nombre completo"
+            />
+            <input type="email" name="email" id="email" placeholder="Correo" />
+            <input type="tel" name="tel" id="tel" placeholder="Teléfono" />
             <input
               type="password"
               name="pass"
               id="pass"
-              placeholder="contraseña"
+              placeholder="Contraseña"
             />
-            <button>Login</button>
+            <button>Registrar</button>
           </form>
           <div className="links">
-            <a href="">¿olvistaste tu contraseña?</a>
-            <Link to={"/register"}>¿Aun no tienes cuenta?</Link>
+            <a href="">¿ya tienes contraseña?</a>
           </div>
           <div className="InicioRapido">
-            <h2>Inicio rápido</h2>
+            <h2>Registro rápido</h2>
             <div className="btnLoginApi">
               <a href="#">
                 <img
@@ -50,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

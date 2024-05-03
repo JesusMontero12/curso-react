@@ -1,27 +1,24 @@
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
 
-const CounterContainer = () => {
-  const [contador, setContador] = useState(0);
-
-  useEffect(() => {
-    setContador(contador + 1);
-  }, []);
+const CounterContainer = ({stock, initial = 1, onAdd}) => {
+  const [contador, setContador] = useState(initial);
 
   const sumar = () => {
-    setContador(contador + 1);
+    contador < stock ? setContador(contador + 1) : "maximo en stock";
   };
 
   const restar = () => {
-    if (contador > 1) {
-      setContador(contador - 1);
-    }
+    contador > 1
+      ? setContador(contador - 1)
+      : "no puedes comprar menos de 1 producto";
   };
 
   let objectProps = {
-    restar,
     sumar,
+    restar,
     contador,
+    onAdd,
   };
 
   return <Counter {...objectProps} />;

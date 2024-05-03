@@ -6,6 +6,7 @@ const MenuCategories = () => {
   return (
     <>
       <Box sx={{ display: { xs: "none", md: "flex" } }} className="categorias">
+        <Link to="/products">Todos</Link>
         <Link to="/filtros/categoria/camisas">Camisas</Link>
         <Link to="/filtros/categoria/calzado">Zapatos</Link>
         <Link to="/filtros/categoria/vestidos">Vestidos</Link>

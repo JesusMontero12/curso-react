@@ -9,11 +9,17 @@ const ItemListContainer = () => {
 
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
+  const [filters, setFilters] = useState({});
 
   useEffect(() => {
-    let productsFiltered = products.filter((product) => 
-     product[key] === value
-    );
+    let UpFilters = { ...filters };
+    UpFilters[key] = value;
+
+    let productsFiltered = products.filter((product) => {
+      return Object.keys(UpFilters).every((filterKey) => {
+        return product[filterKey] === UpFilters[filterKey];
+      });
+    });
 
     const getProducts = new Promise((resolve, reject) => {
       let x = true;
@@ -27,9 +33,10 @@ const ItemListContainer = () => {
         reject({ status: 400, message: "No estás autorizado" });
       }
     });
-
+    setFilters(UpFilters); // Actualiza los filtros//
+    setError(null);
     getProducts.then((res) => setItems(res)).catch((error) => setError(error));
-  }, [value]);
+  }, [key, value, products]);
 
   return <ItemList items={items} error={error} />;
 };
