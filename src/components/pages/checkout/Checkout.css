@@ -129,7 +129,7 @@
           font-weight: 600;
         }
         textarea {
-          display: none;
+          display: flex;
           margin: 10px 0px;
           padding: 10px 15px;
           font-family: montserrat;

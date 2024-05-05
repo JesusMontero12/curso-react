@@ -8,7 +8,9 @@ const Footer = () => {
         <div className="containerFooter">
           <p>
             <span>Regístrate gratis</span>
-            <Link className="linkRegister">Regístrate!</Link>
+            <Link to={"/register"} className="linkRegister">
+              Regístrate!
+            </Link>
           </p>
         </div>
         <div className="copyright">

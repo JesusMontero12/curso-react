@@ -1,9 +1,24 @@
+import { useState } from "react";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ item, onAdd }) => {
   const { id, nombre, precio, sale, descripcion, imagen, desc } = item;
   const imgProduct = imagen && Array.isArray(imagen) ? imagen.slice(0, 3) : [];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleChangeImage = (direction) => {
+    setCurrentIndex((prevIndex) => {
+      let newIndex = prevIndex + direction;
+      if (newIndex < 0) {
+        newIndex = imagen.length - 1;
+      } else if (newIndex >= imagen.length) {
+        newIndex = 0;
+      }
+      return newIndex;
+    });
+  };
 
   // validamos si el producto esta en sale para crear el elemento que indique que este esta en sale
   const newSale =
@@ -75,17 +90,27 @@ const ItemDetail = ({ item, onAdd }) => {
             </div>
             <div className="cuerpo">
               <div className="btnsCambiar">
-                <label id="" className="FlechaImgizquierda">
+                <button
+                  onClick={() => {
+                    handleChangeImage(-1);
+                  }}
+                  className="FlechaImgizquierda"
+                >
                   &#8249;
-                </label>
-                <label id="" className="FlechaImgDerecha">
+                </button>
+                <button
+                  onClick={() => {
+                    handleChangeImage(-1);
+                  }}
+                  className="FlechaImgDerecha"
+                >
                   &#8250;
-                </label>
+                </button>
               </div>
               <img
                 className="imgProducto"
                 id=""
-                src={imgProduct[0]}
+                src={imgProduct[currentIndex]}
                 alt=""
               ></img>
             </div>

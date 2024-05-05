@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,6 @@ const ProductCard = ({
   desc,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const handleChangeImage = (direction) => {
     setCurrentIndex((prevIndex) => {
       let newIndex = prevIndex + direction;
@@ -41,7 +40,7 @@ const ProductCard = ({
     product.length > 15 ? product.substring(0, 14) + "..." : product;
   // recortamos la descripcion del producto
   const newDescription =
-    description.length > 40
+    (description?.length || 0) > 40
       ? description.substring(0, 40) + "..."
       : description;
   // validamos si hay descuento mostramos el precio para darle clase subrayada

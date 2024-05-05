@@ -3,40 +3,53 @@ import { useState, useEffect } from "react";
 import { products } from "../../../data/productsMock.js";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList.jsx";
+import { db } from "../../../firebaseConfig.js";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const { key, value } = useParams();
-
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState({});
 
   useEffect(() => {
-    let UpFilters = { ...filters };
-    UpFilters[key] = value;
+    let upFilters = { ...filters };
+    upFilters[key] = value;
 
-    let productsFiltered = products.filter((product) => {
-      return Object.keys(UpFilters).every((filterKey) => {
-        return product[filterKey] === UpFilters[filterKey];
+    const filtersChanged = Object.keys(upFilters).some(
+      (key) => upFilters[key] !== filters[key]
+    );
+
+    if (filtersChanged) {
+      setFilters(upFilters);
+    }
+
+    const productsCollection = collection(db, "products");
+
+    let consulta = productsCollection;
+
+    if (
+      Object.keys(upFilters).length > 0 &&
+      Object.values(upFilters).every((val) => val !== undefined)
+    ) {
+      const filtersArray = Object.keys(upFilters)
+        .filter((filterKey) => upFilters[filterKey] !== undefined)
+        .map((filterKey) => where(filterKey, "==", upFilters[filterKey]));
+
+      consulta = query(productsCollection, ...filtersArray);
+    }
+
+    getDocs(consulta)
+      .then((res) => {
+        let newArray = res.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        });
+        setItems(newArray);
+      })
+      .catch((error) => {
+        setError(error);
       });
-    });
-
-    const getProducts = new Promise((resolve, reject) => {
-      let x = true;
-      if (x) {
-        if (value) {
-          resolve(productsFiltered);
-        } else {
-          resolve(products);
-        }
-      } else {
-        reject({ status: 400, message: "No estás autorizado" });
-      }
-    });
-    setFilters(UpFilters); // Actualiza los filtros//
-    setError(null);
-    getProducts.then((res) => setItems(res)).catch((error) => setError(error));
-  }, [key, value, products]);
+  }, [key, value, filters]);
 
   return <ItemList items={items} error={error} />;
 };

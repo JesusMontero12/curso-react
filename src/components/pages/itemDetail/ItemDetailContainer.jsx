@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { products } from "../../../data/productsMock.js";
 import { CartContex } from "../../../context/CartContext";
+import { addDoc, collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebaseConfig.js";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -10,16 +12,11 @@ const ItemDetailContainer = () => {
   const { addToCart } = useContext(CartContex);
 
   useEffect(() => {
-    let productFound = products.find((product) => product.id === +id);
-    const getProduct = new Promise((resolve, reject) => {
-      if (productFound === undefined) {
-        reject("producto no encontrado");
-      } else {
-        resolve(productFound);
-      }
+    const productcolection = collection(db, "products");
+    const refDoc = doc(productcolection, id);
+    getDoc(refDoc).then((res) => {
+      setItem({ id: res.id, ...res.data() });
     });
-
-    getProduct.then((res) => setItem(res));
   }, [id]);
 
   const onAdd = (cantidad) => {

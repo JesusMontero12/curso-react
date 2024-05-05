@@ -1,30 +1,24 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { products } from "../../../data/productsMock.js";
 import ItemListMostSold from "./ItemListMostSold.jsx";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../../firebaseConfig.js";
 
 const ItemListMostSoldContainer = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const cntVendidoLimit = 80;
-    let productsFiltered = products.filter(
-      (product) => product.cntVendido >= cntVendidoLimit
-    );
-
-    const getProducts = new Promise((resolve, reject) => {
-      let x = true;
-      if (x) {
-        setTimeout(() => {
-          resolve(cntVendidoLimit ? productsFiltered : products);
-        }, 2000);
-      } else {
-        reject({ status: 400, message: "algo salio mal" });
-      }
+    const productsCollection = collection(db, "products");
+    const consulta = query(productsCollection, where("cntVendido", ">", 60));
+    getDocs(consulta).then((res) => {
+      let newArray = res.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+      setItems(newArray)
+    }).catch((error) => {
+      setError(error)
     });
-
-    getProducts.then((res) => setItems(res)).catch((error) => setError(error));
   }, []);
 
   return <ItemListMostSold items={items} error={error} />;

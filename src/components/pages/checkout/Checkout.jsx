@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Checkout.css";
 
 const Checkout = () => {
+  const [info, setInfo] = useState({
+    email: "",
+    phone: "",
+    nombres: "",
+    apellidos: "",
+    pais: "",
+    region: "",
+    comuna: "",
+    direccion: "",
+    nDireccion: "",
+    nCasa: "",
+    opcionEnvio: "",
+    opcionPago: "",
+    addNota: "",
+  });
   return (
     <>
       <div className="formularioEnvioPago" id="modal">
@@ -16,15 +31,14 @@ const Checkout = () => {
               </p>
               <input
                 type="email"
+                name="email"
                 className="correo"
-                id="correo"
                 placeholder="Correo electrónico"
                 required
               ></input>
               <input
                 type="tel"
-                name="numeroTelefono"
-                id="numeroTelefono"
+                name="phone"
                 placeholder="Teléfono Ejem. +56 9 xxxx xxxx"
                 required
               ></input>
@@ -56,7 +70,7 @@ const Checkout = () => {
               <select name="pais" id="pais">
                 <option value="chile">CHILE</option>
               </select>
-              <select name="region" id="region" autocomplete="given-name">
+              <select name="region" id="region">
                 <option value="">ANTOFAGASTA</option>
                 <option value="">ARICA Y PARINACOTA</option>
                 <option value="">ATACAMA</option>
@@ -80,7 +94,6 @@ const Checkout = () => {
                 type="text"
                 name="comuna"
                 className="comuna"
-                id="comuna"
                 placeholder="Comuna"
                 required
               ></input>
@@ -88,23 +101,20 @@ const Checkout = () => {
                 type="text"
                 name="direccion"
                 className="direccion"
-                id="direccion"
                 placeholder="Ingresa tu dirección"
                 required
               ></input>
               <input
                 type="text"
-                name="numeroDireccion"
+                name="nDireccion"
                 className="numeroDireccion"
-                id="numeroDireccion"
                 placeholder="Ingresa el numero de dirección"
                 required
               ></input>
               <input
                 type="text"
-                name="numeroCasa"
+                name="nCasa"
                 className="numeroCasa"
-                id="numeroCasa"
                 placeholder="Ejem. Casa 3, Dpto 101. (opcional)"
               ></input>
             </section>
@@ -119,7 +129,7 @@ const Checkout = () => {
                     id="retiro"
                     name="opcionEnvio"
                     value="retiro"
-                    checked
+                    defaultChecked={true}
                   ></input>
                   <label htmlFor="retiro">Retiro en tienda.</label>
                 </div>
@@ -146,7 +156,7 @@ const Checkout = () => {
                     id="tarjeta"
                     name="opcionPago"
                     value="tarjeta"
-                    checked
+                    defaultChecked={true}
                   ></input>
                   <label htmlFor="tarjeta">Tarjeta de débito/crédito.</label>
                 </div>
@@ -180,18 +190,18 @@ const Checkout = () => {
                   <label htmlFor="contraEntrega">Contra entrega</label>
                 </div>
               </fieldset>
-              <label htmlFor="checknota" className="AggNota">
+              <div htmlFor="checknota" className="AggNota">
                 <div>
-                  <input type="checkbox" id="checknota"></input>
                   <span>Añade una nota a tu pedido</span>
                 </div>
                 <textarea
                   cols="30"
                   rows="10"
                   id="textNota"
+                  name="addNota"
                   placeholder="Escribe aqui la nota que desee agregar para tu pedido"
                 ></textarea>
-              </label>
+              </div>
               <div className="finalizarPago">
                 <input type="checkbox" id="checkTerminosCondiciones"></input>
                 <label htmlFor="checkTerminosCondiciones">
