@@ -1,6 +1,33 @@
 import { Link } from "react-router-dom";
 import "./Cart.css";
-const Cart = ({ cart, deleteById }) => {
+import Swal from "sweetalert2";
+const Cart = ({ cart, deleteById, total, totalProd }) => {
+  const messageDelete = (msj, img, id) => {
+    Swal.fire({
+      imageUrl: img,
+      imageHeight: 100,
+      title: "¡Espera!",
+      text: msj,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Continuar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteById(id);
+        Swal.fire({
+          icon: "success",
+          title: "¡Genial!",
+          text: "Producto eliminado con exito",
+          showConfirmButton: false,
+          timer: 3500,
+        });
+      }
+    });
+  };
+
   return (
     <>
       <div className="mi_bolsa">
@@ -14,17 +41,33 @@ const Cart = ({ cart, deleteById }) => {
                   key={product.id}
                   className="grid"
                 >
-                  <span className="sale">
-                    <p>Sale</p>
-                    <img src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712493190/proyects/vector/icons/fire_lni6ih.png"></img>
-                  </span>
+                  {product.sale == true && (
+                    <span className="saleCart">
+                      <p>sale</p>
+                      <img
+                        src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712493190/proyects/vector/icons/fire_lni6ih.png"
+                        alt="icono de fuego"
+                      />
+                    </span>
+                  )}
                   <div className="cuerpo">
                     <img src={product.imagen[0]} alt=""></img>
                   </div>
-                  <div className="content_info">
-                    <div className="titulo">
-                      <h3>{product.nombre}</h3>
-                      <p>{product.descripcion}</p>
+                  <div className="content_info_cart">
+                    <div className="titulo_cart">
+                      <h3>
+                        {(product.nombre?.length || 0) > 15
+                          ? product.nombre.substring(0, 14) + "..."
+                          : product.nombre}
+                        {product.desc > 0 && (
+                          <span>{`-${product.desc}%`}</span>
+                        )}
+                      </h3>
+                      <p>
+                        {(product.descripcion?.length || 0) > 60
+                          ? product.descripcion.substring(0, 60) + "..."
+                          : product.descripcion}
+                      </p>
                     </div>
                     <div className="cantidad">
                       <p>Cantidad: {product.cantidad}</p>
@@ -33,14 +76,39 @@ const Cart = ({ cart, deleteById }) => {
                       <p>Talla: m</p>
                     </div>
                     <div className="precio_descuento">
-                      <p>{product.precio}</p>
+                      {product.desc !== undefined &&
+                      product.precio !== undefined ? (
+                        product.desc > 0 ? (
+                          <p>
+                            {(
+                              product.precio -
+                              (product.precio / 100) * product.desc
+                            ).toFixed(3)}
+                          </p>
+                        ) : (
+                          <p>{product.precio.toFixed(3)}</p>
+                        )
+                      ) : (
+                        <p>...</p>
+                      )}
+                    </div>
+                    <div className="precio">
+                      {product.desc > 0 ? (
+                        <p>{product.precio.toFixed(3)}</p>
+                      ) : (
+                        <br />
+                      )}
                     </div>
                   </div>
                   <div className="actionProduct">
                     <button
                       onClick={(e) => {
                         e.preventDefault();
-                        deleteById(product.id);
+                        messageDelete(
+                          `¿Quieres eliminar "${product.nombre}" del carrito?`,
+                          product.imagen[0],
+                          product.id
+                        );
                       }}
                     >
                       <img
@@ -62,13 +130,17 @@ const Cart = ({ cart, deleteById }) => {
             <div className="total">
               <div className="headerDetalle">
                 <h4>Detalle de la compra</h4>
-                <div>Tienes 3 productos agregados a la bolsa</div>
+                <div>Tienes {totalProd} productos agregados al carrito</div>
               </div>
               <div className="detalle">
-                <h5 id="subtotal">Sub-total: </h5>
-                <h6 id="iva">IVA (19%): </h6>
+                <p id="subtotal">
+                  Sub-total: <span>{total.toFixed(3)}</span>
+                </p>
+                <p id="iva">
+                  IVA (19%): <span></span>
+                </p>
                 <p id="total">
-                  Total: <span></span>
+                  Total: <span>{total.toFixed(3)}</span>
                 </p>
                 <Link to={"/checkout"} className="btnCheckout">
                   Ir a pagar

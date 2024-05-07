@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Skeleton, Stack } from "@mui/material";
 import "./ItemList.css";
 import ProductCard from "../../common/productCard/ProductCard.jsx";
 import FiltersProductsContainer from "../../common/filtersProducts/FiltersProductsContainer.jsx";
@@ -31,31 +31,87 @@ const ItemList = ({ items, error }) => {
                   columns={16}
                   className="content_producto"
                 >
-                  {items.map(
-                    ({
-                      id,
-                      sale,
-                      imagen,
-                      nombre,
-                      descripcion,
-                      precio,
-                      desc,
-                    }) => {
-                      return (
-                        <Grid item lg={3} key={id}>
-                          <ProductCard
-                            id={id}
-                            sale={sale}
-                            imgUrl={imagen}
-                            product={nombre}
-                            description={descripcion}
-                            price={precio}
-                            desc={desc}
-                          />
-                        </Grid>
-                      );
-                    }
+                  {items.length > 0 ? (
+                    items.map(
+                      ({
+                        id,
+                        sale,
+                        imagen,
+                        nombre,
+                        descripcion,
+                        precio,
+                        desc,
+                      }) => {
+                        return (
+                          <Grid item lg={3} key={id}>
+                            <ProductCard
+                              id={id}
+                              sale={sale}
+                              imgUrl={imagen}
+                              product={nombre}
+                              description={descripcion}
+                              price={precio}
+                              desc={desc}
+                            />
+                          </Grid>
+                        );
+                      }
+                    )
+                  ) : (
+                    <div className="skeletonCard">
+                      <Stack spacing={1} className="cartSkeleton">
+                        <Skeleton variant="rounded" width={200} height={350} />
+                        <Skeleton variant="text" sx={{ fontSize: "20px" }} />
+                        <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                        <Skeleton
+                          variant="text"
+                          sx={{ fontSize: "1rem" }}
+                          width="60%"
+                        />
+                      </Stack>
+                      <Stack spacing={1} className="cartSkeleton">
+                        <Skeleton variant="rounded" width={200} height={350} />
+                        <Skeleton variant="text" sx={{ fontSize: "20px" }} />
+                        <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                        <Skeleton
+                          variant="text"
+                          sx={{ fontSize: "1rem" }}
+                          width="60%"
+                        />
+                      </Stack>
+                      <Stack spacing={1} className="cartSkeleton">
+                        <Skeleton variant="rounded" width={200} height={350} />
+                        <Skeleton variant="text" sx={{ fontSize: "20px" }} />
+                        <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                        <Skeleton
+                          variant="text"
+                          sx={{ fontSize: "1rem" }}
+                          width="60%"
+                        />
+                      </Stack>
+                      <Stack spacing={1} className="cartSkeleton">
+                        <Skeleton variant="rounded" width={200} height={350} />
+                        <Skeleton variant="text" sx={{ fontSize: "20px" }} />
+                        <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                        <Skeleton
+                          variant="text"
+                          sx={{ fontSize: "1rem" }}
+                          width="60%"
+                        />
+                      </Stack>
+                      <Stack spacing={1} className="cartSkeleton">
+                        <Skeleton variant="rounded" width={200} height={350} />
+                        <Skeleton variant="text" sx={{ fontSize: "20px" }} />
+                        <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                        <Skeleton
+                          variant="text"
+                          sx={{ fontSize: "1rem" }}
+                          width="60%"
+                        />
+                      </Stack>
+                    </div>
                   )}
+
                   {error && <h2>{error.message}</h2>}
                 </Grid>
               </Box>

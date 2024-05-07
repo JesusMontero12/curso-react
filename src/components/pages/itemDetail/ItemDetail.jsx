@@ -1,8 +1,9 @@
 import { useState } from "react";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetail.css";
+import { Skeleton, Stack } from "@mui/material";
 
-const ItemDetail = ({ item, onAdd }) => {
+const ItemDetail = ({ item, onAdd, initial }) => {
   const { id, nombre, precio, sale, descripcion, imagen, desc } = item;
   const imgProduct = imagen && Array.isArray(imagen) ? imagen.slice(0, 3) : [];
 
@@ -52,163 +53,198 @@ const ItemDetail = ({ item, onAdd }) => {
         <p>{precio.toFixed(3)}</p>
       )
     ) : (
-      <p>Desc o price no definidos</p>
+      <p>...</p>
     );
 
   return (
     <>
-      <div className="content_producto_detalle">
-        <div className="productosDetail">
-          {newSale}
-          <div className="productoDetallado">
-            <div className="galeriaImg">
-              <ul>
-                <li>
-                  <img
-                    className="imgProductoMin"
-                    src={imgProduct[0]}
-                    alt=""
-                  ></img>
-                </li>
-                <li>
-                  <img
-                    className="imgProductoMin"
-                    id=""
-                    src={imgProduct[1]}
-                    alt=""
-                  ></img>
-                </li>
-                <li>
-                  <img
-                    className="imgProductoMin"
-                    id=""
-                    src={imgProduct[2]}
-                    alt=""
-                  ></img>
-                </li>
-              </ul>
-            </div>
-            <div className="cuerpo">
-              <div className="btnsCambiar">
-                <button
-                  onClick={() => {
-                    handleChangeImage(-1);
-                  }}
-                  className="FlechaImgizquierda"
-                >
-                  &#8249;
-                </button>
-                <button
-                  onClick={() => {
-                    handleChangeImage(-1);
-                  }}
-                  className="FlechaImgDerecha"
-                >
-                  &#8250;
-                </button>
-              </div>
-              <img
-                className="imgProducto"
-                id=""
-                src={imgProduct[currentIndex]}
-                alt=""
-              ></img>
-            </div>
-            <div className="content_info">
-              <div className="tituloDetail">
-                <h3>
-                  {newName} {newElementDesc}
-                </h3>
-                <p>{newDescription}</p>
+      {item.id ? (
+        <div className="content_producto_detalle">
+          <div className="productosDetail">
+            {newSale}
+            <div className="productoDetallado">
+              <div className="galeriaImg">
                 <ul>
                   <li>
                     <img
-                      src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
+                      className="imgProductoMin"
+                      src={imgProduct[0]}
                       alt=""
                     ></img>
                   </li>
                   <li>
                     <img
-                      src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
+                      className="imgProductoMin"
+                      id=""
+                      src={imgProduct[1]}
                       alt=""
                     ></img>
                   </li>
                   <li>
                     <img
-                      src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
+                      className="imgProductoMin"
+                      id=""
+                      src={imgProduct[2]}
                       alt=""
                     ></img>
                   </li>
-                  <li>
-                    <img
-                      src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
-                      alt=""
-                    ></img>
-                  </li>
-                  <li>
-                    <img
-                      src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella-dark_ltjptw.png"
-                      alt=""
-                    ></img>
-                  </li>
-                  <a href="#comentarios" htmlFor="comentarios">
-                    hay mas de 100 comentarios.
-                  </a>
                 </ul>
               </div>
-              <div className="precio_descuento">{newElementPriceDesc}</div>
-              <div className="precio">{newPrice}</div>
-
-              <div className="tallas">
-                <div className="talla">
-                  <input id="u" type="checkbox"></input>
-                  <label htmlFor="u" id="TallaU">
-                    U
-                  </label>
+              <div className="cuerpo">
+                <div className="btnsCambiar">
+                  <button
+                    onClick={() => {
+                      handleChangeImage(-1);
+                    }}
+                    className="FlechaImgizquierda"
+                  >
+                    &#8249;
+                  </button>
+                  <button
+                    onClick={() => {
+                      handleChangeImage(-1);
+                    }}
+                    className="FlechaImgDerecha"
+                  >
+                    &#8250;
+                  </button>
                 </div>
-                <div className="talla">
-                  <input id="s" type="checkbox"></input>
-                  <label htmlFor="s" id="TallaS">
-                    S
-                  </label>
-                </div>
-                <div className="talla">
-                  <input id="m" type="checkbox"></input>
-                  <label htmlFor="m" id="TallaM">
-                    M
-                  </label>
-                </div>
-                <div className="talla">
-                  <input id="l" type="checkbox"></input>
-                  <label htmlFor="l" id="TallaL">
-                    L
-                  </label>
-                </div>
-                <div className="talla">
-                  <input id="xl" type="checkbox"></input>
-                  <label htmlFor="xl" id="TallaXL">
-                    XL
-                  </label>
-                </div>
-                <div className="talla">
-                  <input id="xxl" type="checkbox"></input>
-                  <label htmlFor="xxl" id="TallaXXL">
-                    XXL
-                  </label>
-                </div>
+                <img
+                  className="imgProducto"
+                  id=""
+                  src={imgProduct[currentIndex]}
+                  alt=""
+                ></img>
               </div>
-              <div className="cantidad">
-                <div className="btns-cantidad">
-                  <CounterContainer stock={item.stock} onAdd={onAdd} />
+              <div className="content_info">
+                <div className="tituloDetail">
+                  <h3>
+                    {newName} {newElementDesc}
+                  </h3>
+                  <p>{newDescription}</p>
+                  <ul>
+                    <li>
+                      <img
+                        src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
+                        alt=""
+                      ></img>
+                    </li>
+                    <li>
+                      <img
+                        src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
+                        alt=""
+                      ></img>
+                    </li>
+                    <li>
+                      <img
+                        src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
+                        alt=""
+                      ></img>
+                    </li>
+                    <li>
+                      <img
+                        src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella_gzzpo3.png"
+                        alt=""
+                      ></img>
+                    </li>
+                    <li>
+                      <img
+                        src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1714691137/proyects/vector/icons/estrella-dark_ltjptw.png"
+                        alt=""
+                      ></img>
+                    </li>
+                    <a href="#comentarios" htmlFor="comentarios">
+                      hay mas de 100 comentarios.
+                    </a>
+                  </ul>
+                </div>
+                <div className="precio_descuento">{newElementPriceDesc}</div>
+                <div className="precio">{newPrice}</div>
+                <div className="tallas">
+                  <div className="talla">
+                    <input id="u" type="checkbox"></input>
+                    <label htmlFor="u" id="TallaU">
+                      U
+                    </label>
+                  </div>
+                  <div className="talla">
+                    <input id="s" type="checkbox"></input>
+                    <label htmlFor="s" id="TallaS">
+                      S
+                    </label>
+                  </div>
+                  <div className="talla">
+                    <input id="m" type="checkbox"></input>
+                    <label htmlFor="m" id="TallaM">
+                      M
+                    </label>
+                  </div>
+                  <div className="talla">
+                    <input id="l" type="checkbox"></input>
+                    <label htmlFor="l" id="TallaL">
+                      L
+                    </label>
+                  </div>
+                  <div className="talla">
+                    <input id="xl" type="checkbox"></input>
+                    <label htmlFor="xl" id="TallaXL">
+                      XL
+                    </label>
+                  </div>
+                  <div className="talla">
+                    <input id="xxl" type="checkbox"></input>
+                    <label htmlFor="xxl" id="TallaXXL">
+                      XXL
+                    </label>
+                  </div>
+                </div>
+                <div className="cantidad">
+                  <div className="btns-cantidad">
+                    <CounterContainer
+                      stock={item.stock}
+                      onAdd={onAdd}
+                      initial={initial}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div className="comentarios" id="comentarios">
+            <p>Comentarios</p>
+          </div>
         </div>
-        <div className="comentarios" id="comentarios">
-          <p>Comentarios</p>
+      ) : (
+        <div className="SkeletonContainer">
+          <div className="skeletonCardDetail">
+            <Stack spacing={1} className="minCartImg">
+              <Skeleton variant="rounded" width={50} height={50} />
+              <Skeleton variant="rounded" width={50} height={50} />
+              <Skeleton variant="rounded" width={50} height={50} />
+            </Stack>
+            <Stack spacing={1} className="cartImg">
+              <Skeleton variant="rounded" width={300} height={300} />
+            </Stack>
+            <Stack spacing={1} className="cartText">
+              <Skeleton
+                variant="text"
+                sx={{ fontSize: "30px" }}
+                className="tittleSkeleton"
+              />
+              <Skeleton variant="text" sx={{ fontSize: "1rem" }} width="100%" />
+              <Skeleton variant="text" sx={{ fontSize: "1rem" }} width="80%" />
+              <Skeleton variant="text" sx={{ fontSize: "1rem" }} width="60%" />
+              <Skeleton variant="text" sx={{ fontSize: "1rem" }} width="40%" />
+              <Skeleton
+                variant="rounded"
+                width={200}
+                height={40}
+                className="buttonSkeleton"
+              />
+            </Stack>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

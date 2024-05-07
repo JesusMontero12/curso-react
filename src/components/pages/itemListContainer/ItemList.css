@@ -41,3 +41,9 @@
     }
   }
 }
+.skeletonCard {
+  display: flex;
+  .cartSkeleton {
+    margin: 20px 10px 10px 10px;
+  }
+}

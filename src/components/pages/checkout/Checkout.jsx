@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Checkout.css";
+import { CartContex } from "../../../context/CartContext";
 
 const Checkout = () => {
+  const { cart } = useContext(CartContex);
   const [info, setInfo] = useState({
     email: "",
-    phone: "",
+    telefono: "",
     nombres: "",
     apellidos: "",
     pais: "",
@@ -17,12 +19,27 @@ const Checkout = () => {
     opcionPago: "",
     addNota: "",
   });
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setInfo({ ...info, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let obj = {
+      buyer: info,
+      items: cart,
+      total: 0,
+    };
+  };
+
   return (
     <>
       <div className="formularioEnvioPago" id="modal">
         <div className="formulario_content">
           <h4>Formulario de pago</h4>
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <section className="section_contacto">
               <h5>1. Información de contacto</h5>
               <p>
@@ -35,12 +52,14 @@ const Checkout = () => {
                 className="correo"
                 placeholder="Correo electrónico"
                 required
+                onChange={handleChange}
               ></input>
               <input
                 type="tel"
-                name="phone"
+                name="telefono"
                 placeholder="Teléfono Ejem. +56 9 xxxx xxxx"
                 required
+                onChange={handleChange}
               ></input>
             </section>
             <section className="section_direccion">
@@ -57,6 +76,7 @@ const Checkout = () => {
                   id="nombres"
                   placeholder="Nombres"
                   required
+                  onChange={handleChange}
                 ></input>
                 <input
                   type="text"
@@ -65,30 +85,37 @@ const Checkout = () => {
                   id="apellidos"
                   placeholder="Apellidos"
                   required
+                  onChange={handleChange}
                 ></input>
               </div>
-              <select name="pais" id="pais">
-                <option value="chile">CHILE</option>
+              <select name="pais" id="pais" onClick={handleChange}>
+                <option value="chile" name="chile">
+                  CHILE
+                </option>
               </select>
-              <select name="region" id="region">
-                <option value="">ANTOFAGASTA</option>
-                <option value="">ARICA Y PARINACOTA</option>
-                <option value="">ATACAMA</option>
-                <option value="">
+              <select name="region" id="region" onClick={handleChange}>
+                <option name="antofagasta">ANTOFAGASTA</option>
+                <option name="arica y parinacota">ARICA Y PARINACOTA</option>
+                <option name="atacama">ATACAMA</option>
+                <option name="aysen del gral. carlos ibanez del campo">
                   AYSÉN DEL GRAL. CARLOS IBÁÑEZ DEL CAMPO
                 </option>
-                <option value="">BIOBÍO</option>
-                <option value="">COQUIMBO</option>
-                <option value="">LA ARAUCANÍA</option>
-                <option value="">LIBERTADOR GENERAL BERNARDO O'HIGGINS</option>
-                <option value="">LOS LAGOS</option>
-                <option value="">LOS RÍOS</option>
-                <option value="">MAGALLANES Y DE LA ANTÁRTICA CHILENA</option>
-                <option value="">MAULE</option>
-                <option value="">METROPOLITANA DE SANTIAGO</option>
-                <option value="">ÑIBLE</option>
-                <option value="">TARAPACÁ</option>
-                <option value="">VALPARAISO</option>
+                <option name="biobio">BIOBÍO</option>
+                <option name="coquimbo">COQUIMBO</option>
+                <option name="la araucania">LA ARAUCANÍA</option>
+                <option name="libertador general bernardo ohiggins">
+                  LIBERTADOR GENERAL BERNARDO O'HIGGINS
+                </option>
+                <option name="los lagos">LOS LAGOS</option>
+                <option name=" los rios">LOS RÍOS</option>
+                <option name="magallanes y de la antartica chilena">
+                  MAGALLANES Y DE LA ANTÁRTICA CHILENA
+                </option>
+                <option name="maule">MAULE</option>
+                <option name="rm santiago">METROPOLITANA DE SANTIAGO</option>
+                <option name="nible">ÑIBLE</option>
+                <option name="tarapaca">TARAPACÁ</option>
+                <option name="valparaiso">VALPARAISO</option>
               </select>
               <input
                 type="text"
@@ -96,6 +123,7 @@ const Checkout = () => {
                 className="comuna"
                 placeholder="Comuna"
                 required
+                onChange={handleChange}
               ></input>
               <input
                 type="text"
@@ -103,6 +131,7 @@ const Checkout = () => {
                 className="direccion"
                 placeholder="Ingresa tu dirección"
                 required
+                onChange={handleChange}
               ></input>
               <input
                 type="text"
@@ -110,12 +139,14 @@ const Checkout = () => {
                 className="numeroDireccion"
                 placeholder="Ingresa el numero de dirección"
                 required
+                onChange={handleChange}
               ></input>
               <input
                 type="text"
                 name="nCasa"
                 className="numeroCasa"
                 placeholder="Ejem. Casa 3, Dpto 101. (opcional)"
+                onChange={handleChange}
               ></input>
             </section>
             <section className="section_envio">
@@ -130,6 +161,7 @@ const Checkout = () => {
                     name="opcionEnvio"
                     value="retiro"
                     defaultChecked={true}
+                    onChange={handleChange}
                   ></input>
                   <label htmlFor="retiro">Retiro en tienda.</label>
                 </div>
@@ -140,6 +172,7 @@ const Checkout = () => {
                     id="envio"
                     name="opcionEnvio"
                     value="envio"
+                    onChange={handleChange}
                   ></input>
                   <label htmlFor="envio">Envio Nacional</label>
                 </div>
@@ -157,6 +190,7 @@ const Checkout = () => {
                     name="opcionPago"
                     value="tarjeta"
                     defaultChecked={true}
+                    onChange={handleChange}
                   ></input>
                   <label htmlFor="tarjeta">Tarjeta de débito/crédito.</label>
                 </div>
@@ -166,6 +200,7 @@ const Checkout = () => {
                     id="transferencia"
                     name="opcionPago"
                     value="transferencia"
+                    onChange={handleChange}
                   ></input>
                   <label htmlFor="transferencia">Transferencia bancaria.</label>
                 </div>
@@ -176,6 +211,7 @@ const Checkout = () => {
                     id="mercadoPago"
                     name="opcionPago"
                     value="mercadoPago"
+                    onChange={handleChange}
                   ></input>
                   <label htmlFor="mercadoPago">Mercado Pago.</label>
                 </div>
@@ -186,6 +222,7 @@ const Checkout = () => {
                     id="contraEntrega"
                     name="opcionPago"
                     value="contraEntrega"
+                    onChange={handleChange}
                   ></input>
                   <label htmlFor="contraEntrega">Contra entrega</label>
                 </div>
@@ -200,6 +237,7 @@ const Checkout = () => {
                   id="textNota"
                   name="addNota"
                   placeholder="Escribe aqui la nota que desee agregar para tu pedido"
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <div className="finalizarPago">

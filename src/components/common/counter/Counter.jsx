@@ -1,6 +1,16 @@
 import "./Counter.css";
+import Swal from "sweetalert2";
 
 const Counter = ({ sumar, restar, contador, onAdd }) => {
+  const message = (msj) => {
+    Swal.fire({
+      icon: "success",
+      title: "¡Genial!",
+      text: msj,
+      showConfirmButton: false,
+      timer: 3500,
+    });
+  };
   return (
     <>
       <div className="containerCounter">
@@ -11,7 +21,13 @@ const Counter = ({ sumar, restar, contador, onAdd }) => {
           <button onClick={sumar}>+</button>
         </div>
         <div className="btnAction">
-          <button onClick={() => onAdd(contador)} className="btnAdd">
+          <button
+            onClick={() => {
+              onAdd(contador);
+              message("El producto se ha agregado al carrito correctamente");
+            }}
+            className="btnAdd"
+          >
             agregar
           </button>
           <img

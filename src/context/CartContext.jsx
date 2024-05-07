@@ -1,37 +1,29 @@
 import { createContext, useState } from "react";
-import Swal from "sweetalert2";
 
 export const CartContex = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  const isInCart = (id) => {
+    let validatedProduct = cart.some((product) => product.id === id);
+    return validatedProduct;
+  };
+
   const addToCart = (product) => {
-    const messageError = (msj) => {
-      Swal.fire({
-        icon: "error",
-        title: "¡Vaya!",
-        text: msj,
-        showConfirmButton: false,
-        timer: 3500,
+    const exist = isInCart(product.id);
+    if (exist) {
+      let newArray = cart.map((elemento) => {
+        if (elemento.id === product.id) {
+          return { ...elemento, cantidad: product.cantidad };
+        } else {
+          return elemento;
+        }
       });
-    };
-    const message = (msj) => {
-      Swal.fire({
-        icon: "success",
-        title: "¡Genial!",
-        text: msj,
-        showConfirmButton: false,
-        timer: 3500,
-      });
-    };
-    const validateProductCart = cart.some((item) => item.id === product.id);
-    validateProductCart
-      ? messageError(
-          "El producto que intentas agregar ya esta disponible en tu carrito"
-        )
-      : (setCart([...cart, product]),
-        message("El producto agregado correctamente al carrito"));
+      setCart(newArray);
+    } else {
+      setCart([...cart, product]);
+    }
   };
 
   const deleteById = (id) => {
@@ -39,7 +31,33 @@ const CartContextProvider = ({ children }) => {
     setCart(newArray);
   };
 
-  let data = { cart, addToCart, deleteById };
+  const getQuantityById = (id) => {
+    let product = cart.find((element) => element.id === id);
+    return product?.cantidad;
+  };
+
+  const getTotalPrice = () => {
+    let total = cart.reduce((acc, product) => {
+      return acc + product.cantidad * product.precio;
+    }, 0);
+    return total;
+  };
+
+  const getTotalItems = () => {
+    let total = cart.reduce((acc, product) => {
+      return acc + product.cantidad
+    }, 0 )
+    return total
+  };
+
+  let data = {
+    cart,
+    addToCart,
+    deleteById,
+    getQuantityById,
+    getTotalPrice,
+    getTotalItems
+  };
   return <CartContex.Provider value={data}> {children} </CartContex.Provider>;
 };
 

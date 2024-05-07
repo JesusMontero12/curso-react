@@ -246,3 +246,31 @@
     }
   }
 }
+
+.SkeletonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .skeletonCardDetail {
+    margin: 100px;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    .minCartImg {
+      width: 5%;
+      margin: 0px 10px 10px 10px;
+    }
+    .cartImg {
+      width: 45%;
+    }
+    .cartText {
+      width: 80%;
+      .tittleSkeleton {
+        margin-bottom: 20px;
+      }
+      .buttonSkeleton {
+        margin-top: 30px;
+      }
+    }
+  }
+}
