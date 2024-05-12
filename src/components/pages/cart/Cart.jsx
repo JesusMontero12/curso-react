@@ -59,9 +59,7 @@ const Cart = ({ cart, deleteById, total, totalProd }) => {
                         {(product.nombre?.length || 0) > 15
                           ? product.nombre.substring(0, 14) + "..."
                           : product.nombre}
-                        {product.desc > 0 && (
-                          <span>{`-${product.desc}%`}</span>
-                        )}
+                        {product.desc > 0 && <span>{`-${product.desc}%`}</span>}
                       </h3>
                       <p>
                         {(product.descripcion?.length || 0) > 60
@@ -126,7 +124,7 @@ const Cart = ({ cart, deleteById, total, totalProd }) => {
               </h1>
             )}
           </div>
-          {cart.length > 0 ? (
+          {cart.length > 0 && (
             <div className="total">
               <div className="headerDetalle">
                 <h4>Detalle de la compra</h4>
@@ -142,12 +140,12 @@ const Cart = ({ cart, deleteById, total, totalProd }) => {
                 <p id="total">
                   Total: <span>{total.toFixed(3)}</span>
                 </p>
-                <Link to={"/checkout"} className="btnCheckout">
+                <Link to="/checkout" className="btnCheckout">
                   Ir a pagar
                 </Link>
               </div>
             </div>
-          ) : null}
+          )}
         </div>
       </div>
     </>

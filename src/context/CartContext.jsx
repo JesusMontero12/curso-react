@@ -26,6 +26,10 @@ const CartContextProvider = ({ children }) => {
     }
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const deleteById = (id) => {
     const newArray = cart.filter((product) => product.id !== id);
     setCart(newArray);
@@ -45,18 +49,19 @@ const CartContextProvider = ({ children }) => {
 
   const getTotalItems = () => {
     let total = cart.reduce((acc, product) => {
-      return acc + product.cantidad
-    }, 0 )
-    return total
+      return acc + product.cantidad;
+    }, 0);
+    return total;
   };
 
   let data = {
     cart,
     addToCart,
+    clearCart,
     deleteById,
     getQuantityById,
     getTotalPrice,
-    getTotalItems
+    getTotalItems,
   };
   return <CartContex.Provider value={data}> {children} </CartContex.Provider>;
 };

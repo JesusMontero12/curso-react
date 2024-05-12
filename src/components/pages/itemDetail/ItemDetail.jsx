@@ -22,24 +22,17 @@ const ItemDetail = ({ item, onAdd, initial }) => {
   };
 
   // validamos si el producto esta en sale para crear el elemento que indique que este esta en sale
-  const newSale =
-    sale == true ? (
-      <span className="saleDetail">
-        <p>sale</p>
-        <img
-          src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712493190/proyects/vector/icons/fire_lni6ih.png"
-          alt="icono de fuego"
-        />
-      </span>
-    ) : null;
-  // validamos si el nombre del producto tiene caracteres mayor a 15 (lo recortamos)
-  const newName =
-    (nombre?.length || 0) > 15 ? nombre.substring(0, 14) + "..." : nombre;
-  // recortamos la descripcion del producto
-  const newDescription =
-    (descripcion?.length || 0) > 40
-      ? descripcion.substring(0, 40) + "..."
-      : descripcion;
+  const newSale = sale == true && (
+    <span className="saleDetail">
+      <p>sale</p>
+      <img
+        src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712493190/proyects/vector/icons/fire_lni6ih.png"
+        alt="icono de fuego"
+      />
+    </span>
+  );
+
+
   // Validamos si existe descuento agrega un etiqueta span con los datos
   const newElementDesc = desc > 0 ? <span>{`-${desc}%`}</span> : null;
   // validamos si hay descuento mostramos el precio para darle clase subrayada
@@ -119,9 +112,9 @@ const ItemDetail = ({ item, onAdd, initial }) => {
               <div className="content_info">
                 <div className="tituloDetail">
                   <h3>
-                    {newName} {newElementDesc}
+                    {nombre} {newElementDesc}
                   </h3>
-                  <p>{newDescription}</p>
+                  <p>{descripcion}</p>
                   <ul>
                     <li>
                       <img
