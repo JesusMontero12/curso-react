@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Cart.css";
 import Swal from "sweetalert2";
+
 const Cart = ({ cart, deleteById, total, totalProd }) => {
   const messageDelete = (msj, img, id) => {
     Swal.fire({

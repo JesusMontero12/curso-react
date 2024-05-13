@@ -10,29 +10,32 @@ import ItemListMostSoldContainer from "./components/pages/itemListMostSold/ItemL
 import CartContextProvider from "./context/CartContext";
 import Checkout from "./components/pages/checkout/Checkout";
 import { RegisterContainer } from "./components/pages/register/RegisterContainer";
+import FavoritesContextProvider from "./context/FavoritesContext";
 
 function App() {
   return (
     <BrowserRouter>
       <CartContextProvider>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<ItemListMostSoldContainer />} />
-            <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<CartContainer />} />
+        <FavoritesContextProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<ItemListMostSoldContainer />} />
+              <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
+              <Route path="/cart" element={<CartContainer />} />
 
-            <Route path="/favorites" element={<FavoritesContainer />} />
-            <Route path="/products" element={<ItemListContainer />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route
-              path="/filtros/:key/:value"
-              element={<ItemListContainer />}
-            />
+              <Route path="/favorites" element={<FavoritesContainer />} />
+              <Route path="/products" element={<ItemListContainer />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route
+                path="/filtros/:key/:value"
+                element={<ItemListContainer />}
+              />
+            </Route>
             <Route path="*" element={<NotFound />} />
-          </Route>
-          <Route path="/login" element={<LoginContainer />} />
-          <Route path="/register" element={<RegisterContainer />} />
-        </Routes>
+            <Route path="/login" element={<LoginContainer />} />
+            <Route path="/register" element={<RegisterContainer />} />
+          </Routes>
+        </FavoritesContextProvider>
       </CartContextProvider>
     </BrowserRouter>
   );

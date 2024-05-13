@@ -57,9 +57,18 @@
     transition: 0.2s;
     transform: scale(1.05);
   }
-  img {
-    width: 24px;
-    height: 24px;
-    margin: 6px;
+  .btnAddFav {
+    background: none;
+    border: none;
+    img {
+      width: 24px;
+      height: 24px;
+      margin: 6px;
+    }
+    img:hover {
+      cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1.05);
+    }
   }
 }

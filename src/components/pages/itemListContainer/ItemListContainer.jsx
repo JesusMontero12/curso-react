@@ -8,6 +8,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const { key, value } = useParams();
+
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState({});
@@ -15,14 +16,6 @@ const ItemListContainer = () => {
   useEffect(() => {
     let upFilters = { ...filters };
     upFilters[key] = value;
-
-    const filtersChanged = Object.keys(upFilters).some(
-      (key) => upFilters[key] !== filters[key]
-    );
-
-    if (filtersChanged) {
-      setFilters(upFilters);
-    }
 
     const productsCollection = collection(db, "products");
 

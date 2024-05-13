@@ -2,7 +2,7 @@ import { useState } from "react";
 import Counter from "./Counter";
 import Swal from "sweetalert2";
 
-const CounterContainer = ({ stock, initial = 1, onAdd }) => {
+const CounterContainer = ({ idFav, stock, initial = 1, onAdd, onAddFav }) => {
   const [contador, setContador] = useState(initial);
 
   const messageAlert = (msj) => {
@@ -14,7 +14,11 @@ const CounterContainer = ({ stock, initial = 1, onAdd }) => {
   };
 
   const sumar = () => {
-    contador < stock ? setContador(contador + 1) : messageAlert(`Limite de stock, solo nos quedan ${stock} unidad(es) disponible(s).`);
+    contador < stock
+      ? setContador(contador + 1)
+      : messageAlert(
+          `Limite de stock, solo nos quedan ${stock} unidad(es) disponible(s).`
+        );
   };
 
   const restar = () => {
@@ -24,10 +28,12 @@ const CounterContainer = ({ stock, initial = 1, onAdd }) => {
   };
 
   let objectProps = {
+    idFav,
     sumar,
     restar,
     contador,
     onAdd,
+    onAddFav,
   };
 
   return <Counter {...objectProps} />;

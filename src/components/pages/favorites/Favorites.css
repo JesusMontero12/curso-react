@@ -15,4 +15,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  .containerFavCero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    .favCero {
+      font-family: montserrat;
+      font-weight: 300;
+    }
+  }
 }

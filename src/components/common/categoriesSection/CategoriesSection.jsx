@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./CategoriesSection.css";
 const CategoriesSection = () => {
   return (
@@ -7,7 +8,7 @@ const CategoriesSection = () => {
         <div className="cards_categorias">
           {/* <!-- Categoria hombre --> */}
           <div className="card">
-            <a href="">
+            <Link to="/filtros/genero/hombre">
               <div className="img-content">
                 <img
                   src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712541056/proyects/vector/categoria-hombre_y1lfce.jpg"
@@ -15,11 +16,11 @@ const CategoriesSection = () => {
                 ></img>
               </div>
               <h2 className="titulo_card">Hombre</h2>
-            </a>
+            </Link>
           </div>
           {/*  <!-- Categoria mujer --> */}
           <div className="card">
-            <a href="">
+            <Link to="/filtros/genero/mujer">
               <div className="img-content">
                 <img
                   src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712541057/proyects/vector/categoria-mujer_en1oqj.jpg"
@@ -27,11 +28,11 @@ const CategoriesSection = () => {
                 ></img>
               </div>
               <h2 className="titulo_card">Mujer</h2>
-            </a>
+            </Link>
           </div>
           {/* <!-- Categoria Niños --> */}
           <div className="card">
-            <a href="">
+            <Link to="/filtros/genero/ninoa">
               <div className="img-content">
                 <img
                   src="https://res.cloudinary.com/dqngvzxqy/image/upload/v1712541061/proyects/vector/categoria-ni%C3%B1o_erw8ba.jpg"
@@ -39,7 +40,7 @@ const CategoriesSection = () => {
                 ></img>
               </div>
               <h2 className="titulo_card">Niño y niña</h2>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

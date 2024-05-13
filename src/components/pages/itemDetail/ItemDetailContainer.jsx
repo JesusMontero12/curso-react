@@ -4,11 +4,13 @@ import { useState, useEffect, useContext } from "react";
 import { CartContex } from "../../../context/CartContext";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebaseConfig.js";
+import { FavoritesContext } from "../../../context/FavoritesContext.jsx";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
   const { addToCart, getQuantityById } = useContext(CartContex);
+  const { addToFav } = useContext(FavoritesContext);
 
   let initial = getQuantityById(id);
 
@@ -25,7 +27,19 @@ const ItemDetailContainer = () => {
     addToCart(product);
   };
 
-  return <ItemDetail item={item} onAdd={onAdd} initial={initial} />;
+  const onAddFav = () => {
+    let product = { ...item, fav: true };
+    addToFav(product);
+  };
+
+  return (
+    <ItemDetail
+      item={item}
+      onAdd={onAdd}
+      initial={initial}
+      onAddFav={onAddFav}
+    />
+  );
 };
 
 export default ItemDetailContainer;

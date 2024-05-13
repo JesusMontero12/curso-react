@@ -3,7 +3,7 @@ import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetail.css";
 import { Skeleton, Stack } from "@mui/material";
 
-const ItemDetail = ({ item, onAdd, initial }) => {
+const ItemDetail = ({ item, onAdd, initial, onAddFav }) => {
   const { id, nombre, precio, sale, descripcion, imagen, desc } = item;
   const imgProduct = imagen && Array.isArray(imagen) ? imagen.slice(0, 3) : [];
 
@@ -31,7 +31,6 @@ const ItemDetail = ({ item, onAdd, initial }) => {
       />
     </span>
   );
-
 
   // Validamos si existe descuento agrega un etiqueta span con los datos
   const newElementDesc = desc > 0 ? <span>{`-${desc}%`}</span> : null;
@@ -194,9 +193,11 @@ const ItemDetail = ({ item, onAdd, initial }) => {
                 <div className="cantidad">
                   <div className="btns-cantidad">
                     <CounterContainer
+                      idFav={item.id}
                       stock={item.stock}
                       onAdd={onAdd}
                       initial={initial}
+                      onAddFav={onAddFav}
                     />
                   </div>
                 </div>
